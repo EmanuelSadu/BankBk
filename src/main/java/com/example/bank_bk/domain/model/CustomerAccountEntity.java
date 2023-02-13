@@ -1,17 +1,16 @@
 package com.example.bank_bk.domain.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
 @Entity
 @Table(name = "CUSTOMER_ACCOUNT", schema = "dev", catalog = "")
 public class CustomerAccountEntity {
-    @Basic
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     @Column(name = "ACCOUNT_ID")
-    private String accountId;
+    private int accountId;
     @Basic
     @Column(name = "ACCOUNT_VALUE")
     private Integer accountValue;
@@ -19,11 +18,11 @@ public class CustomerAccountEntity {
     @Column(name = "ACCOUNT_CURRENCY")
     private String accountCurrency;
 
-    public String getAccountId() {
+    public int getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(String accountId) {
+    public void setAccountId(int accountId) {
         this.accountId = accountId;
     }
 
@@ -48,7 +47,7 @@ public class CustomerAccountEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CustomerAccountEntity that = (CustomerAccountEntity) o;
-        return Objects.equals(accountId, that.accountId) && Objects.equals(accountValue, that.accountValue) && Objects.equals(accountCurrency, that.accountCurrency);
+        return accountId == that.accountId && Objects.equals(accountValue, that.accountValue) && Objects.equals(accountCurrency, that.accountCurrency);
     }
 
     @Override
