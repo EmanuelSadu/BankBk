@@ -10,6 +10,8 @@ import java.util.List;
 @Repository
 public interface CustomerAccountRepository extends JpaRepository<CustomerAccountEntity,Long> {
 
+    /*
     @Query("Select ca.accountId, ca.accountValue, ca.accountCurrency from CustomerAccountEntity ca")
      List<CustomerAccountEntity> findAllCA();
+    */
 }

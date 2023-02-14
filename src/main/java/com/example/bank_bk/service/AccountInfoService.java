@@ -13,6 +13,6 @@ public class AccountInfoService {
 @Autowired private CustomerAccountRepository customerAccountRepository;
 
     public List<CustomerAccountEntity> getAccountInfo(){
-        return customerAccountRepository.findAllCA();
+        return customerAccountRepository.findAll();
     }
 }

@@ -11,7 +11,7 @@
     <groupId>com.example</groupId>
     <artifactId>bank_bk</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>bank_bk</name>
     <description>bank_bk</description>
     <properties>
