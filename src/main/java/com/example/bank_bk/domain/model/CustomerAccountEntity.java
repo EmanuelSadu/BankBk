@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "CUSTOMER_ACCOUNT", schema = "dev", catalog = "")
+@Table(name = "customer_account", schema = "dev", catalog = "")
 public class CustomerAccountEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -17,6 +17,12 @@ public class CustomerAccountEntity {
     @Basic
     @Column(name = "ACCOUNT_CURRENCY")
     private String accountCurrency;
+    @Basic
+    @Column(name = "ACCOUNT_NAME")
+    private Integer accountName;
+    @Basic
+    @Column(name = "CUSTOMER_ID")
+    private Integer customerId;
 
     public int getAccountId() {
         return accountId;
@@ -53,5 +59,21 @@ public class CustomerAccountEntity {
     @Override
     public int hashCode() {
         return Objects.hash(accountId, accountValue, accountCurrency);
+    }
+
+    public Integer getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(Integer accountName) {
+        this.accountName = accountName;
+    }
+
+    public Integer getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 }

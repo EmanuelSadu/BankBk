@@ -9,14 +9,14 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/accountId")
+@RequestMapping("/account")
 public class AccountInfo {
 
     @Autowired
     private AccountInfoService accountInfoService;
 
-    @GetMapping
-    public @ResponseBody List<CustomerAccountEntity> getAccountInfo(){
-        return accountInfoService.getAccountInfo();
+    @GetMapping(value = "/{id}")
+    public @ResponseBody CustomerAccountEntity getAccountInfo(@PathVariable("id") Long id){
+        return accountInfoService.getAccountInfo(id);
     }
 }
